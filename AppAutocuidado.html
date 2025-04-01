@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocuidado Diario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            background-color: #fce4ec;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .container {
+            max-width: 500px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            font-size: 20px;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffeb3b;
+            color: #333;
+            font-weight: bold;
+        }
+        .btn-custom {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .btn-custom:hover {
+            background-color: #d81b60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container animate__animated animate__fadeIn">
+        <h2 class="mb-4">¿Qué necesito hoy?</h2>
+        <button class="btn btn-custom" onclick="mostrarMensaje()">Descubrir</button>
+        <div id="mensaje" class="message mt-3 animate__animated" style="display: none;"></div>
+    </div>
+
+    <script>
+        const mensajes = [
+            "Tómate un momento para respirar profundamente.",
+            "Sal a caminar y disfruta del aire fresco.",
+            "Bebe un vaso de agua y mantente hidratado.",
+            "Escribe tres cosas por las que estás agradecido hoy.",
+            "Date un pequeño descanso y escucha tu canción favorita.",
+            "Abraza a alguien que quieras o date un abrazo a ti mismo.",
+            "Lee un capítulo de un libro que te inspire.",
+            "Sonríe, aunque no haya razón, y siente la diferencia.",
+            "Desconéctate un momento de las pantallas y relájate.",
+            "Medita por cinco minutos y siente la calma." 
+        ];
+
+        function mostrarMensaje() {
+            const mensajeElemento = document.getElementById("mensaje");
+            const mensajeAleatorio = mensajes[Math.floor(Math.random() * mensajes.length)];
+            mensajeElemento.textContent = mensajeAleatorio;
+            mensajeElemento.style.display = "block";
+            mensajeElemento.classList.remove("animate__fadeOut");
+            mensajeElemento.classList.add("animate__fadeIn");
+        }
+    </script>
+</body>
+</html>
